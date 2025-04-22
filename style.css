@@ -1,0 +1,467 @@
+/* Basic Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cyberpunk Color Palette */
+:root {
+    --dark-bg: #0c0c1d;             /* Deep midnight blue/purple */
+    --primary-text: #e0e1dd;        /* Off-white / light grey text */
+    --heading-color: #ffffff;       /* Pure white for main headings */
+    --accent-purple: #9f00ff;       /* Vibrant Neon Purple */
+    --accent-purple-glow: rgba(159, 0, 255, 0.7); /* Brighter glow color */
+    --accent-secondary: #00f0ff;    /* Neon Cyan as a secondary accent */
+    --border-color: #3a3a5e;        /* Dark purple/blue border */
+    --glow-color-subtle: rgba(159, 0, 255, 0.3); /* Subtle Purple glow */
+    --secondary-text: #a0a0c0;      /* Muted purple-grey for less important text */
+    --container-bg: rgba(20, 20, 40, 0.5); /* Semi-transparent container background */
+    --success-color: var(--accent-secondary); /* Cyan for success messages */
+    --error-color: #ff4d4d;         /* Red for error messages */
+}
+
+/* Import Rajdhani font */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&display=swap');
+
+/* Apply base styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    line-height: 1.7;
+    color: var(--primary-text);
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(rgba(20, 20, 40, 0.9), rgba(20, 20, 40, 0.9)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%233a3a5e' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    padding: 10px;
+}
+
+/* Main content container */
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px 40px;
+    box-shadow: 0 0 25px var(--glow-color-subtle), inset 0 0 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(3px);
+}
+
+/* Smooth transitions */
+a, button, .resume-section {
+    transition: all 0.4s ease;
+}
+
+/* --- Navigation Bar Styles --- */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(12, 12, 29, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(159, 0, 255, 0.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list li a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active { /* Style for hover and active state */
+    color: var(--accent-purple);
+    text-shadow: 0 0 8px var(--glow-color-subtle);
+    border-bottom-color: var(--accent-purple);
+}
+
+/* --- Header --- */
+.profile-header {
+    text-align: center;
+    margin-top: 60px; /* Add margin to push header below fixed navbar */
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.profile-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--accent-purple);
+    box-shadow: 0 0 10px var(--accent-purple-glow);
+}
+
+.profile-header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--heading-color);
+    text-shadow: 0 0 12px var(--accent-purple-glow), 0 0 5px var(--accent-purple);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.profile-header .job-title {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: var(--secondary-text);
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.profile-header .contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 15px;
+    font-size: 1em;
+}
+
+.profile-header .contact-info p {
+    margin: 0;
+    color: var(--secondary-text);
+    display: flex;
+    align-items: center;
+}
+
+.profile-header .contact-info .icon-placeholder {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-purple);
+    margin-right: 8px;
+    box-shadow: 0 0 5px var(--accent-purple-glow);
+    font-size: 0;
+}
+
+.profile-header .contact-info a {
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.profile-header .contact-info a:hover {
+    color: var(--primary-text);
+    text-shadow: 0 0 8px var(--accent-secondary);
+}
+
+.profile-header .contact-info p.separator {
+    color: var(--border-color);
+    font-weight: 300;
+    user-select: none;
+}
+
+/* --- Main Content --- */
+.resume-main {
+    padding-top: 20px;
+}
+
+.resume-section {
+    /* Add top margin for scroll offset */
+    scroll-margin-top: 80px; /* Adjust based on navbar height */
+
+    margin-bottom: 45px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, transition-delay 0s;
+}
+
+.resume-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* transition-delay applied by JS */
+}
+
+.resume-section h2 {
+    font-size: 1.9em;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px var(--glow-color-subtle);
+}
+
+.resume-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 0;
+    background-color: var(--accent-purple);
+    box-shadow: 0 0 8px var(--accent-purple-glow);
+    transition: width 0.5s ease-out;
+}
+
+.resume-section.is-visible h2::after {
+    width: 60px;
+}
+
+/* Education Entries */
+.education-entry {
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 2px solid var(--accent-purple);
+    box-shadow: -5px 0 10px -5px var(--glow-color-subtle);
+}
+
+.education-entry h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--primary-text);
+    margin-bottom: 5px;
+}
+
+.institution, .dates {
+    font-size: 1em;
+    font-style: normal;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+}
+
+.education-entry ul {
+    list-style: none;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+
+.education-entry li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.education-entry li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--accent-purple);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Skills Section */
+#skills .skills-category {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: rgba(0,0,0, 0.1);
+    border: 1px solid var(--border-color);
+    border-left-width: 3px;
+    border-left-color: var(--accent-purple);
+}
+
+#skills strong {
+    font-weight: 700;
+    color: var(--accent-secondary);
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* --- Contact Form Styles --- */
+#contact h2 {
+    margin-bottom: 15px;
+}
+
+#contact > p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    text-align: center;
+    color: var(--secondary-text);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary-text);
+    font-weight: 500;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    color: var(--primary-text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 10px var(--glow-color-subtle);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid var(--accent-purple);
+    color: var(--accent-purple);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+    z-index: 1;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-purple);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.submit-button:hover:not(:disabled) { /* Prevent hover effect when disabled */
+    color: var(--dark-bg);
+    box-shadow: 0 0 15px var(--accent-purple-glow);
+}
+
+.submit-button:hover:not(:disabled)::before {
+    width: 100%;
+}
+
+.submit-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    border-color: var(--secondary-text);
+    color: var(--secondary-text);
+    box-shadow: none;
+}
+.submit-button:disabled::before {
+    width: 0;
+}
+
+
+#form-status {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    min-height: 1.2em; /* Reserve space */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#form-status.is-visible {
+    opacity: 1;
+}
+#form-status.success {
+    color: var(--success-color);
+}
+#form-status.error {
+    color: var(--error-color);
+}
+
+/* --- Footer --- */
+.profile-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    font-weight: 300;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 25px;
+        margin: 20px auto;
+    }
+    .profile-header h1 { font-size: 2.5em; }
+    .profile-header .job-title { font-size: 1.2em; }
+    .resume-section h2 { font-size: 1.6em; }
+    .education-entry h3 { font-size: 1.2em; }
+     .profile-header { margin-top: 70px; } /* Adjust header margin */
+     .resume-section { scroll-margin-top: 70px; } /* Adjust scroll margin */
+}
+
+@media (max-width: 500px) {
+    body { padding: 5px; }
+    .container {
+        padding: 15px 20px;
+        margin: 10px auto;
+        border: none;
+        box-shadow: none;
+        background: none;
+        backdrop-filter: none;
+    }
+     #navbar { padding: 8px 0; }
+    .nav-list li { margin: 2px 8px; }
+    .nav-list li a { font-size: 0.9em; padding: 4px 6px; }
+    .profile-header { margin-top: 60px; padding-bottom: 20px; margin-bottom: 30px; } /* Adjust header margin */
+    .profile-header h1 { font-size: 2.1em; }
+    .profile-header .job-title { font-size: 1.1em; }
+    .profile-header .contact-info { flex-direction: column; gap: 5px; align-items: center; }
+    .profile-header .contact-info p.separator { display: none; }
+    .resume-section { margin-bottom: 30px; scroll-margin-top: 60px; } /* Adjust scroll margin */
+    .resume-section h2 { font-size: 1.4em; }
+    .education-entry h3 { font-size: 1.1em; }
+}

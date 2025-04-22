@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samarth Saran - Profile</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <header class="profile-header">
+            <h1>Samarth Saran</h1>
+            <p class="job-title">Aspiring Innovator | BBA (Digital Business & Entrepreneurship) & BSc (Computer Science & Data Analytics)</p>
+            <div class="contact-info">
+                <p><span class="icon-placeholder">📧</span> <a href="mailto:samarthsaran2005@gmail.com">samarthsaran2005@gmail.com</a></p>
+                <p class="separator"> | </p> 
+                <p><span class="icon-placeholder">🔗</span> <a href="https://www.linkedin.com/in/samarth-saran-12b9ba275/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+                <p class="separator"> | </p>
+                <p><span class="icon-placeholder">💻</span> <a href="https://github.com/Chip-cell" target="_blank" rel="noopener noreferrer">GitHub Portfolio</a></p>
+            </div>
+        </header>
+
+        <main class="resume-main">
+            <section id="summary" class="resume-section">
+                <h2>Professional Summary</h2>
+                <p>
+                    A highly motivated and analytical first-year student pursuing a distinctive dual degree: a BBA in Digital Business and Entrepreneurship from IIM Bangalore and a BSc in Computer Science and Data Analytics from IIT Patna. Passionate about the intersection of technology, data-driven insights, and innovative business strategies. Eager to leverage academic foundations in real-world scenarios, contribute to impactful projects, and develop expertise in both digital transformation and data science. Seeking challenging opportunities to apply quantitative skills and entrepreneurial thinking.
+                </p>
+            </section>
+            <section id="education" class="resume-section">
+                <h2>Education</h2>
+                <div class="education-entry">
+                    <h3>BBA - Digital Business and Entrepreneurship</h3>
+                    <p class="institution">Indian Institute of Management Bangalore (IIMB) | Bangalore, India</p>
+                    <p class="dates">2023 - 2027</p>
+                    <ul>
+                        <li>Relevant Coursework: Microeconomics, Business Communication, Introduction to Digital Marketing, Principles of Management.</li>
+                        <li>Key Projects: Developed a basic business model canvas for a hypothetical EdTech startup; Conducted market research assignment on emerging digital payment trends in India.</li>
+                        <li>Academic Achievements/Activities: Active Member,IIMB .</li>
+                    </ul>
+                </div>
+                <div class="education-entry">
+                    <h3>BSc - Computer Science and Data Analytics</h3>
+                    <p class="institution">Indian Institute of Technology Patna (IITP) | Patna, India</p>
+                    <p class="dates">2023 - Present (Expected Graduation: 2027)</p>
+                     <ul>
+                        <li>Relevant Coursework: Calculus I & II, Introduction to Programming (Python), Discrete Mathematics, Linear Algebra.</li>
+                        <li>Key Projects: Implemented fundamental algorithms (sorting, searching) in Python; Completed introductory data analysis exercises using Pandas & NumPy libraries on sample datasets.</li>
+                        <li>Academic Achievements/Activities: Member, Institute Coding Club; Attendee, IIT Patna Data Science & AI Seminar Series.</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="skills" class="resume-section">
+                <h2>Core Competencies</h2>
+                <div class="skills-category">
+                    <p><strong>Technical Skills:</strong> Python (Foundational), SQL (Basic), Data Analysis Libraries (Pandas, NumPy - Basic), Data Entry & Analysis (Excel), Microsoft Office Suite (Word, Excel, PowerPoint), Google Workspace, HTML/CSS (Basic Understanding).</p>
+                </div>
+                 <div class="skills-category">
+                    <p><strong>Business & Analytical Skills:</strong> Data Interpretation, Market Research (Conceptual), Business Problem Solving, Quantitative Analysis (Basic), Entrepreneurial Mindset, Digital Literacy, Business Model Canvas Development.</p>
+                </div>
+                 <div class="skills-category">
+                    <p><strong>Soft Skills:</strong> Communication (Verbal & Written), Team Collaboration, Analytical Thinking, Critical Thinking, Adaptability, Time Management, Eagerness to Learn, Proactive Problem-Solving.</p>
+                </div>
+                 <div class="skills-category">
+                     <p><strong>Languages:</strong> English (Fluent), Hindi (Native)</p>
+                </div>
+            </section>
+            <section id="contact" class="resume-section">
+                <h2>Get In Touch</h2>
+                <p style="margin-bottom: 25px; color: var(--secondary-text);">Interested in collaborating or have a question? Send me a message!</p>
+                <form id="contact-form" action="https://formsubmit.co/saransamarth24@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="email">name</label>
+                        <input type="email" id="email" name="sender_email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Subject / Reason:</label>
+                        <input type="text" id="reason" name="subject" placeholder="Reason for contacting" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Your detailed message here..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </div>
+                     <p id="form-status"></p>
+                     <input type="text" name="_gotcha" style="display:none !important">
+                </form>
+            </section>
+
+        </main> 
+
+        <footer class="profile-footer">
+            <p>© <span id="current-year"></span> Samarth Saran. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
